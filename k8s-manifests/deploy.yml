@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springdockkube
+  labels:
+    app: springdockkube
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springdockkube
+  template:
+    metadata:
+      labels:
+        app: springdockkube
+    spec:
+      containers:
+      - name: springdockkube
+        image: 358446258854.dkr.ecr.us-east-1.amazonaws.com/springdockkube:latest 
+        ports:
+        - containerPort: 1122
